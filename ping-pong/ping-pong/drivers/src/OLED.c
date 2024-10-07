@@ -85,7 +85,7 @@ void OLED_reset() {
 void OLED_print_8char(uint8_t c){
 	c -= 32;
 	for (uint8_t i=0; i<8; i++){
-		uint8_t byte = pgm_read_byte(&font8[c][i]);
+		uint8_t byte = (uint8_t)pgm_read_byte(&font8[c][i]);
 		OLED_write_data(byte);
 	}
 }
